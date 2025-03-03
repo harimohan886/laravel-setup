@@ -1,0 +1,12 @@
+---
+- name: Set up Laravel on EC2
+  hosts: ec2_instance
+  become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    laravel_dir: /var/www/laravel
+    db_name: test
+    db_user: test
+    db_password: test
+  roles:
+    - laravel_setup
